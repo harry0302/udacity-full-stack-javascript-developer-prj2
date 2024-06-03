@@ -9,7 +9,7 @@ const index = async (_req: Request, res: Response) => {
     const products = await store.index();
     res.json(products);
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: String(err) });
   }
 };
 
@@ -18,7 +18,7 @@ const show = async (req: Request, res: Response) => {
     const product = await store.show(req.params.id);
     res.json(product);
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: String(err) });
   }
 };
 
@@ -32,7 +32,7 @@ const create = async (req: Request, res: Response) => {
     const newProduct = await store.create(product);
     res.json(newProduct);
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: String(err) });
   }
 };
 

@@ -33,7 +33,7 @@ Open a new terminal and get to the project root repository!
 
 Setup PostgreSQL database
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
 The database will run on port 5432. 
@@ -119,4 +119,4 @@ To make it easier to test the API, you can use the provided Postman collection.
 ## Deconstruction
 
 1. Run `npm run db-down` to drop the regular database tables.
-2. Run `docker compose down -v` to delete the databases
+2. Run `docker-compose down -v` to delete the databases

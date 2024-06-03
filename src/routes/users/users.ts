@@ -10,7 +10,7 @@ const index = async (_req: Request, res: Response) => {
     const users = await store.index();
     res.json(users);
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: String(err) });
   }
 };
 
@@ -23,7 +23,7 @@ const show = async (req: Request, res: Response) => {
       last_name: user.last_name
     });
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: String(err) });
   }
 };
 
@@ -48,7 +48,7 @@ const create = async (req: Request, res: Response) => {
       token: token
     });
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: String(err) });
   }
 };
 
